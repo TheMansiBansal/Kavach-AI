@@ -1,0 +1,38 @@
+[
+  {
+    "merchant_id": "M-99",
+    "timestamp": "2026-02-01T10:12:22",
+    "error_code": 401,
+    "message": "Missing Header: X-SDK-Version"
+  },
+  {
+    "merchant_id": "M-99",
+    "timestamp": "2026-02-01T10:12:40",
+    "error_code": 401,
+    "message": "Missing Header: X-SDK-Version"
+  },
+  {
+    "merchant_id": "M-99",
+    "timestamp": "2026-02-01T10:13:10",
+    "error_code": 401,
+    "message": "Missing Header: X-SDK-Version"
+  },
+  {
+    "merchant_id": "M-22",
+    "timestamp": "2026-02-01T10:15:10",
+    "error_code": 401,
+    "message": "Invalid webhook secret"
+  },
+  {
+    "merchant_id": "M-22",
+    "timestamp": "2026-02-01T10:15:40",
+    "error_code": 401,
+    "message": "Invalid webhook secret"
+  },
+  {
+    "merchant_id": "M-77",
+    "timestamp": "2026-02-01T10:20:10",
+    "error_code": 500,
+    "message": "Internal Server Error"
+  }
+]

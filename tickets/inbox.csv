@@ -1,0 +1,4 @@
+merchant_id,subject,message
+M-99,Checkout Broken,We migrated to headless today and now clicking Pay Now does nothing. Customers are stuck and we are losing money.
+M-22,Webhooks Not Working,After switching to headless none of our order webhooks are firing. Our fulfillment system is dead.
+M-77,Random Errors,Our checkout sometimes works and sometimes crashes. This started after migration.
