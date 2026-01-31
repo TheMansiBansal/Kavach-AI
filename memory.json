@@ -1,0 +1,85 @@
+{
+  "actions": [
+    {
+      "timestamp": "2026-01-31T21:54:21.667642",
+      "merchant_id": "M-99",
+      "cause": "Merchant missing X-SDK-Version header",
+      "action": "Send setup instructions to merchant",
+      "outcome": "success",
+      "confidence_before": 0.95,
+      "confidence_after": 0.95
+    },
+    {
+      "timestamp": "2026-01-31T21:54:27.365081",
+      "merchant_id": "M-22",
+      "cause": "Merchant using wrong webhook secret (should be B)",
+      "action": "Send webhook secret fix guide (REQUIRES APPROVAL)",
+      "outcome": "failure",
+      "confidence_before": 0.9,
+      "confidence_after": 0.9
+    },
+    {
+      "timestamp": "2026-01-31T21:54:39.184706",
+      "merchant_id": "M-77",
+      "cause": "Possible platform instability",
+      "action": "Escalate to engineering for investigation",
+      "outcome": "success",
+      "confidence_before": 0.6,
+      "confidence_after": 0.6
+    },
+    {
+      "timestamp": "2026-01-31T21:54:45.816922",
+      "merchant_id": "M-77",
+      "cause": "Possible platform instability",
+      "action": "Escalate to engineering for investigation",
+      "outcome": "failure",
+      "confidence_before": 0.6,
+      "confidence_after": 0.8999999999999999
+    },
+    {
+      "timestamp": "2026-01-31T21:54:51.324360",
+      "merchant_id": "M-77",
+      "cause": "Possible platform instability",
+      "action": "ESCALATE EARLY - Collect more data - confidence too low (Previous failures detected)",
+      "outcome": "success",
+      "confidence_before": 0.6,
+      "confidence_after": 0.5
+    },
+    {
+      "timestamp": "2026-01-31T21:55:59.052715",
+      "merchant_id": "M-99",
+      "cause": "Merchant missing X-SDK-Version header",
+      "action": "Send setup instructions to merchant",
+      "outcome": "failure",
+      "confidence_before": 0.95,
+      "confidence_after": 1.0
+    },
+    {
+      "timestamp": "2026-01-31T21:56:05.590886",
+      "merchant_id": "M-99",
+      "cause": "Merchant missing X-SDK-Version header",
+      "action": "ESCALATE EARLY - Escalate to engineering for investigation (Previous failures detected)",
+      "outcome": "success",
+      "confidence_before": 0.95,
+      "confidence_after": 0.85
+    },
+    {
+      "timestamp": "2026-01-31T21:56:09.988506",
+      "merchant_id": "M-99",
+      "cause": "Merchant missing X-SDK-Version header",
+      "action": "Send setup instructions to merchant",
+      "outcome": "failure",
+      "confidence_before": 0.95,
+      "confidence_after": 1.0
+    },
+    {
+      "timestamp": "2026-01-31T21:56:12.540550",
+      "merchant_id": "M-99",
+      "cause": "Merchant missing X-SDK-Version header",
+      "action": "ESCALATE EARLY - Escalate to engineering for investigation (Previous failures detected)",
+      "outcome": "success",
+      "confidence_before": 0.95,
+      "confidence_after": 0.85
+    }
+  ]
+}
