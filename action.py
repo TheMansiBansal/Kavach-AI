@@ -5,13 +5,13 @@ def execute(decisions):
     Enhanced action executor with explainable reasoning and memory recording.
     """
     print("\n" + "="*80)
-    print("🤖 ADVANCED SELF-HEALING AGENT - ACTION PLAN")
+    print("ADVANCED SELF-HEALING AGENT - ACTION PLAN")
     print("="*80 + "\n")
     
     for d in decisions:
         print("─" * 80)
-        print(f"🏪 MERCHANT: {d['merchant_id']}")
-        print(f"📋 ISSUE: {d['issue']}")
+        print(f"MERCHANT: {d['merchant_id']}")
+        print(f"ISSUE: {d['issue']}")
         print()
         
         # === ROOT CAUSE ===
@@ -25,26 +25,26 @@ def execute(decisions):
         
         if adjustment != 0:
             sign = "+" if adjustment > 0 else ""
-            print(f"📊 CONFIDENCE: {conf_pct}% (base: {conf_before_pct}%, {sign}{int(adjustment*100)}%)")
+            print(f"CONFIDENCE: {conf_pct}% (base: {conf_before_pct}%, {sign}{int(adjustment*100)}%)")
             print(f"   Adjustment reason: {d.get('confidence_adjustment_reason', 'N/A')}")
         else:
-            print(f"📊 CONFIDENCE: {conf_pct}%")
+            print(f"CONFIDENCE: {conf_pct}%")
         print()
         
         # === INCIDENT TYPE ===
         incident_type = d.get('incident_type', 'MERCHANT-SPECIFIC')
         if incident_type == "PLATFORM-WIDE":
-            print("⚠️  INCIDENT TYPE: 🔴 PLATFORM-WIDE")
+            print("INCIDENT TYPE: PLATFORM-WIDE")
             if d.get('platform_incident_info'):
                 info = d['platform_incident_info']
                 print(f"   Pattern: {info.get('pattern', 'Unknown')}")
                 print(f"   Affected merchants: {len(info.get('affected_merchants', []))}")
         else:
-            print(f"📍 INCIDENT TYPE: {incident_type}")
+            print(f"INCIDENT TYPE: {incident_type}")
         print()
         
         # === EXPLAINABLE REASONING ===
-        print("🧠 REASONING CHAIN:")
+        print("REASONING CHAIN:")
         reasoning = d.get('reasoning_chain', [])
         if reasoning:
             for i, step in enumerate(reasoning, 1):
@@ -56,7 +56,7 @@ def execute(decisions):
         # === LLM HYPOTHESES ===
         hypotheses = d.get('llm_hypotheses', [])
         if hypotheses:
-            print("💡 LLM HYPOTHESES:")
+            print("LLM HYPOTHESES:")
             for i, hyp in enumerate(hypotheses, 1):
                 cause = hyp.get('cause', 'Unknown')
                 evidence = hyp.get('evidence', 'No evidence')
@@ -65,7 +65,7 @@ def execute(decisions):
             print()
         
         # === EVIDENCE ===
-        print("📚 EVIDENCE:")
+        print("EVIDENCE:")
         
         evidence_logs = d.get('evidence_logs', [])
         if evidence_logs:
@@ -88,11 +88,11 @@ def execute(decisions):
                 print(f"      • {outcome.upper()} on {timestamp[:10]}")
         
         if not evidence_logs and not evidence_docs and not evidence_memory:
-            print("   ⚠️  No evidence available")
+            print("No evidence available")
         print()
         
         # === PROPOSED ACTION ===
-        print(f"⚡ PROPOSED ACTION: {d['action']}")
+        print(f"PROPOSED ACTION: {d['action']}")
         print()
         
         # === RISK & SAFETY ===
@@ -108,7 +108,7 @@ def execute(decisions):
         
         safety_flags = d.get('safety_flags', [])
         if safety_flags:
-            print(f"🛡️  SAFETY GUARDRAILS TRIGGERED:")
+            print(f"SAFETY GUARDRAILS TRIGGERED:")
             for flag in safety_flags:
                 print(f"   • {flag}")
         print()
@@ -116,15 +116,15 @@ def execute(decisions):
         # === HUMAN APPROVAL ===
         requires_approval = d.get('requires_human_approval', True)
         if requires_approval:
-            print("👤 HUMAN APPROVAL: ✋ REQUIRED")
+            print("HUMAN APPROVAL: REQUIRED")
         else:
-            print("👤 HUMAN APPROVAL: ✅ NOT REQUIRED (Safe to auto-execute)")
+            print("HUMAN APPROVAL: NOT REQUIRED (Safe to auto-execute)")
         
         print("─" * 80)
         print()
     
     print("\n" + "="*80)
-    print("📝 All actions require review in the dashboard before execution")
+    print("All actions require review in the dashboard before execution")
     print("="*80 + "\n")
 
 
