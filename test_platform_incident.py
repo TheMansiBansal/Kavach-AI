@@ -32,7 +32,7 @@ def load_test_tickets():
 
 def main():
     print("\n" + "="*80)
-    print("🧪 PLATFORM-WIDE INCIDENT DETECTION TEST")
+    print("PLATFORM-WIDE INCIDENT DETECTION TEST")
     print("="*80)
     print("\nThis test demonstrates cross-merchant pattern detection.")
     print("Scenario: 12 merchants experiencing 500 errors within 1 minute")
