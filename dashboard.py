@@ -49,7 +49,7 @@ if platform_incidents:
     col2.metric("Incident Type", incident_info.get('incident_type', 'Unknown'))
     col3.metric("Priority", incident_info.get('escalation_priority', 'HIGH'))
     
-    st.warning(f"**Pattern:** {incident_info.get('pattern', 'Unknown pattern')}")
+    st.warning(f"Pattern: {incident_info.get('pattern', 'Unknown pattern')}")
     st.info("Auto-fixes have been BLOCKED for all affected merchants. Engineering escalation required.")
     st.divider()
 
@@ -85,25 +85,25 @@ for d in decisions:
         # Incident type
         incident_type = d.get('incident_type', 'MERCHANT-SPECIFIC')
         if incident_type == "PLATFORM-WIDE":
-            st.error(f"**Incident Type:**  PLATFORM-WIDE")
+            st.error(f"Incident Type:  PLATFORM-WIDE")
         else:
-            st.info(f"**Incident Type:** {incident_type}")
+            st.info(f"Incident Type: {incident_type}")
         
         # Root cause
-        st.markdown(f"** Root Cause:** {d['cause']}")
+        st.markdown(f"Root Cause: {d['cause']}")
         
         # Proposed action
-        st.markdown(f"** Proposed Action:** {d['action']}")
+        st.markdown(f"Proposed Action: {d['action']}")
         
         # Safety flags
         safety_flags = d.get('safety_flags', [])
         if safety_flags:
-            st.warning(f"** Safety Guardrails:** {', '.join(safety_flags)}")
+            st.warning(f"Safety Guardrails: {', '.join(safety_flags)}")
         
         # === EXPLAINABLE REASONING (Expandable) ===
         with st.expander(" View Reasoning & Evidence"):
             # Reasoning chain
-            st.markdown("**Reasoning Chain:**")
+            st.markdown("Reasoning Chain: ")
             reasoning = d.get('reasoning_chain', [])
             if reasoning:
                 for i, step in enumerate(reasoning, 1):
@@ -116,7 +116,7 @@ for d in decisions:
             # LLM Hypotheses
             hypotheses = d.get('llm_hypotheses', [])
             if hypotheses:
-                st.markdown("**LLM Hypotheses:**")
+                st.markdown("LLM Hypotheses: ")
                 for i, hyp in enumerate(hypotheses, 1):
                     cause = hyp.get('cause', 'Unknown')
                     evidence = hyp.get('evidence', 'No evidence')
@@ -129,7 +129,7 @@ for d in decisions:
             col_a, col_b, col_c = st.columns(3)
             
             with col_a:
-                st.markdown("**Evidence from Logs:**")
+                st.markdown("Evidence from Logs: ")
                 evidence_logs = d.get('evidence_logs', [])
                 if evidence_logs:
                     for log in evidence_logs[:5]:
@@ -138,7 +138,7 @@ for d in decisions:
                     st.markdown("_None_")
             
             with col_b:
-                st.markdown("**Evidence from Docs:**")
+                st.markdown("Evidence from Docs: ")
                 evidence_docs = d.get('evidence_docs', [])
                 if evidence_docs:
                     for doc in evidence_docs[:5]:
@@ -147,7 +147,7 @@ for d in decisions:
                     st.markdown("_None_")
             
             with col_c:
-                st.markdown("**Evidence from Memory:**")
+                st.markdown("Evidence from Memory: ")
                 evidence_memory = d.get('evidence_memory', [])
                 if evidence_memory:
                     for mem in evidence_memory[:3]:
@@ -160,16 +160,16 @@ for d in decisions:
             # Confidence adjustment
             if d.get('confidence_adjustment', 0.0) != 0:
                 st.markdown("---")
-                st.markdown(f"**Confidence Adjustment:** {d.get('confidence_adjustment_reason', 'N/A')}")
+                st.markdown(f"Confidence Adjustment: {d.get('confidence_adjustment_reason', 'N/A')}")
         
         # === HUMAN APPROVAL ===
         st.markdown("---")
         
         requires_approval = d.get('requires_human_approval', True)
         if requires_approval:
-            st.warning("**Human Approval Required**")
+            st.warning("Human Approval Required")
         else:
-            st.success("**Safe to Auto-Execute**")
+            st.success("Safe to Auto-Execute")
         
         col_approve, col_reject = st.columns(2)
         
@@ -205,7 +205,7 @@ for d in decisions:
 
 # === SYSTEM STATUS ===
 st.markdown("---")
-st.markdown("##System Status")
+st.markdown("System Status")
 
 col1, col2, col3, col4 = st.columns(4)
 col1.metric("Active Tickets", len(tickets))
