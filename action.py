@@ -15,7 +15,7 @@ def execute(decisions):
         print()
         
         # === ROOT CAUSE ===
-        print(f"🔍 ROOT CAUSE: {d['cause']}")
+        print(f"ROOT CAUSE: {d['cause']}")
         print()
         
         # === CONFIDENCE ===
